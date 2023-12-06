@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            min-height: 5000px;
+            background-color: #eee;
+        }
+
+        .scroller {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 5px;
+            background-color: #0075ff;
+            z-index: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroller">
+
+    </div>
+    <script>
+        let el = document.querySelector(".scroller");
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        window.addEventListener("scroll", () => {
+            let scrollTop = document.documentElement.scrollTop;
+            el.style.width = `${(scrollTop / height) * 100}%`;
+        })
+    </script>
+</body>
+
+</html>
