@@ -39,6 +39,7 @@
         window.addEventListener("scroll", () => {
             let scrollTop = document.documentElement.scrollTop;
             el.style.width = `${(scrollTop / height) * 100}%`;
+            console.log(scrollTop)
         })
     </script>
 </body>
